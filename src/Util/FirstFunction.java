@@ -21,7 +21,7 @@ public class FirstFunction {
 			out.println("</table>");			
 		}
 		catch(IOException e){
-			
+			//내용없음
 		}
 	}
 }
