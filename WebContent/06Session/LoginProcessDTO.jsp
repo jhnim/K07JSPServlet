@@ -18,16 +18,15 @@ String pw = request.getParameter("user_pw");
 String drv = application.getInitParameter("JDBCDriver");
 String url = application.getInitParameter("ConnectionURL");
 
-
 //DAO객체생성 및 DB연결
 MemberDAO dao = new MemberDAO(drv, url);
+
 /*
 연습문제] 작성용교안에 있는 getMemberDTO()를 MemberDAO클래스에 작성한 후 
 	아래코드를적당히수정하여 로그임 페이지에 회원의 이름이 출력되도록 구현하시오.
 */
-
 //폼값으로 받은 아이디, 패스워드를 통해 로그인 처리 함수 호출
-MemberDTO memberDTO =  dao.getMemberDTO(id, pw);/*  
+MemberDTO memberDTO = dao.getMemberDTO(id, pw);/*  
 		해당 함수는 count()를 사용하므로 로그인시 사용한 아이디, 패스워드 외의 정보를 얻어올 수 없다.
 	*/
 

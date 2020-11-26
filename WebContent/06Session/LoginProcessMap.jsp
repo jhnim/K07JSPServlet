@@ -19,13 +19,12 @@ String pw = request.getParameter("user_pw");
 String drv = application.getInitParameter("JDBCDriver");
 String url = application.getInitParameter("ConnectionURL");
 
-
 //DAO객체생성 및 DB연결
 MemberDAO dao = new MemberDAO(drv, url);
 
 
 //폼값으로 받은 아이디, 패스워드를 통해 로그인 처리 함수 호출
-Map<String, String> memberMap =  dao.getMemberMap(id, pw);/*  
+Map<String, String> memberMap = dao.getMemberMap(id, pw);/*  
 		해당 함수는 count()를 사용하므로 로그인시 사용한 아이디, 패스워드 외의 정보를 얻어올 수 없다.
 	*/
 
