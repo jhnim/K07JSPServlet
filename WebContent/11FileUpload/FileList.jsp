@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="model.MyFileDAO"%>
+<%@page import="model.MyfileDTO"%>
 <%@page import="java.net.URLEncoder"%>
 <%@page import="java.io.File"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -39,5 +42,29 @@ File[] fileList = file.listFiles();
 	}
 	%>
 	</ul>
+	
+	<h2>DB에 등록된 파일 리스트 보기</h2>
+	<a href="FileUploadMain.jsp">파일등록하기</a>
+	<%
+	MyfileDTO dto = new MyfileDTO();
+	MyFileDAO dao = new MyFileDAO(application);
+	List<MyfileDTO> fileLists = dao.myFileList();
+	//out.print(fileList.size());
+	%>
+	<table border="1">
+	<% for(MyfileDTO f : fileLists){ %>
+		<tr>
+			<td><%=f.getIdx() %></td>
+			<td><%=f.getName() %></td>
+			<td><%=f.getTitle() %></td>
+			<td><%=f.getInter() %></td>
+			<td><%=f.getOfile() %></td>
+			<td><%=f.getSfil() %></td>
+			<td><%=f.getPostdate() %></td>
+			<td><a 
+			href="Download2.jsp?oName=<%=URLEncoder.encode(f.getOfile(),"UTF-8")%>&sName=<%=URLEncoder.encode(f.getSfil(),"UTF-8")%>">[다운로드]</a></td>
+		</tr>
+	<%} %>
+	</table>
 </body>
 </html>
