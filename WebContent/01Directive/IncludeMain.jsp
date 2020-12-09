@@ -22,7 +22,7 @@
 	<div class="AllWrap">
 		<div class="header">
 			<!-- GNB(Global Navigation Bar)영역  -->
-			<%@ includ file="../common/Top.jsp" %>
+			<%@ include file="../common/Top.jsp" %>
 		</div>
 		<div class="body">
 			<div class="left_menu">
