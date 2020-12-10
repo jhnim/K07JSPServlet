@@ -21,9 +21,9 @@
 				<form class="form-inline ml-auto">	
 					<div class="form-group">
 						<select name="searchColumn" class="form-control">
-							<option value="title" >제목</option>
+							<option value="title" selected >제목</option>
 									
-							<option value="content" selected>내용</option>
+							<option value="content" >내용</option>
 							<option value="name" >작성자</option>
 						</select>
 					</div>
@@ -81,7 +81,7 @@
 									${map.totalCount - (((map.nowPage-1) * map.pageSize) + loop.index) }
 								</td>
 								<td>
-									<a href="../DataRoom/DataView?idx=${row.idx }&nowPage=${param.nowPage }">
+									<a href="../DataRoom/DataView?idx=${row.idx }&nowPage=${map.nowPage }&searchColumn=${param.searchColumn }&searchWord=${param.searchWord }">
 										${row.title }
 									</a>
 								</td>
@@ -109,7 +109,7 @@
 					<!-- 각종 버튼 부분 -->
 					<!-- <button type="button" class="btn">Basic</button> -->
 					<button type="button" class="btn btn-primary"
-						onclick="location.href='../DataRoom/DataWrite';">글쓰기</button>
+						onclick="location.href='../DataRoom/DataWrite?nowPage=${map.nowPage }&searchColumn=${param.searchColumn }&searchWord=${param.searchWord }';">글쓰기</button>
 <!-- 					<button type="button" class="btn btn-secondary">수정하기</button>
 					<button type="button" class="btn btn-success">삭제하기</button>
 					<button type="button" class="btn btn-info">답글쓰기</button>
@@ -133,13 +133,11 @@
 						nowPage : 현재페이지 번호
 						"BoardList.jsp?" : 해당 게시판의 실행 파일명
 						-->
+						${map.pagingImg }
 					</ul>
 				</div>	
 			</div>		
 		<!-- ### 게시판의 body 부분 end -->
-			<div class="text-center">
-				<%-- 텍스트 기반의 페이지번호 출력하기 --%>					
-			</div>
 		</div>
 	</div>
 	<div class="row border border-dark border-bottom-0 border-right-0 border-left-0"></div>
