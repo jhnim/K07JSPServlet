@@ -31,7 +31,7 @@
 컨텍스트 초기화 파라미터의 <param-name> 속성 전체를 가져온다.
 반환형은 열거형 객체인 Enumeration이 된다.
 --%>
-<h3>컨텍스트 초기화 파라미터명 전채목록보기</h3>
+<h3>컨텍스트 초기화 파라미터명 전체목록보기</h3>
 <ul>
 <%
 Enumeration<String> names = application.getInitParameterNames();

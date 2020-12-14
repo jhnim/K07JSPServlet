@@ -76,7 +76,7 @@ request.setAttribute("requestMember1", new MemberDTO("Hong", "1234", "홍길동"
 	요청을 하게된다. 이 경우 request영역은 공유되지 않는다.
 	웹브라우저의 주소창에는 새롭게 요청된 페이지의 경로명이 보여지게 된다.
 	--%>
-	<h3>sendRedirect()를 사용한 페이지 이동</h3>
+ 	<h3>sendRedirect()를 사용한 페이지 이동</h3>
 	<%
 		response.sendRedirect("RequestResult.jsp?param="+URLEncoder.encode("리다이렉트방식", "UTF-8"));
 	%>
